@@ -1,0 +1,199 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/white"
+    tools:ignore="HardcodedText"
+    tools:context=".Fragment.Menu.HomeFragment">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <LinearLayout
+            android:id="@+id/searchBar"
+            android:layout_width="match_parent"
+            android:layout_height="70dp"
+            android:background="@color/white"
+            android:orientation="horizontal"
+            android:weightSum="5"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent">
+
+            <EditText
+                android:id="@+id/notificationSearch"
+                android:layout_width="300dp"
+                android:layout_height="48dp"
+                android:layout_gravity="center"
+                android:layout_marginLeft="10dp"
+                android:layout_marginRight="10dp"
+                android:layout_weight="4"
+                android:autofillHints="Any"
+                android:background="@drawable/searchbar_rounded"
+                android:drawableStart="@drawable/ic_baseline_search_24"
+                android:drawablePadding="5dp"
+                android:ems="10"
+                android:hint="Search"
+                android:inputType="textPersonName"
+                android:paddingLeft="10dp"
+                android:paddingRight="10dp" />
+
+            <ImageView
+                android:id="@+id/notificationButton"
+                android:layout_width="50dp"
+                android:layout_height="50dp"
+                android:layout_gravity="center"
+                android:layout_marginEnd="10dp"
+                android:layout_weight="1"
+                android:contentDescription="Shopping Cart"
+                android:src="@drawable/shopping_cart_icon"
+                app:tint="@color/red" />
+
+        </LinearLayout>
+
+        <ImageView
+            android:id="@+id/imageView"
+            android:layout_width="match_parent"
+            android:layout_height="55dp"
+            android:src="@drawable/mcm_header"
+            android:contentDescription="@string/def"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/searchBar" />
+
+        <HorizontalScrollView
+            android:id="@+id/horizontalScrollView"
+            android:layout_width="match_parent"
+            android:layout_height="270dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/imageView">
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:baselineAligned="false"
+                android:orientation="horizontal">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:orientation="vertical">
+
+                    <Button
+                        android:id="@+id/shirtCategory"
+                        style="?android:attr/buttonBarButtonStyle"
+                        android:layout_width="match_parent"
+                        android:layout_height="136dp"
+                        android:drawableTop="@drawable/shirts_smaller"
+                        android:text="Shirt/Tops"
+                        android:textAllCaps="false"
+                        android:textColor="@color/blue" />
+
+                    <Button
+                        android:id="@+id/accessoriesCategory"
+                        style="?android:attr/buttonBarButtonStyle"
+                        android:layout_width="110dp"
+                        android:layout_height="136dp"
+                        android:drawableTop="@drawable/accessories_smaller"
+                        android:text="Accessories"
+                        android:textAllCaps="false"
+                        android:textColor="@color/blue" />
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:orientation="vertical">
+
+                    <Button
+                        android:id="@+id/varsityCategory"
+                        style="?android:attr/buttonBarButtonStyle"
+                        android:layout_width="110dp"
+                        android:layout_height="136dp"
+                        android:drawableTop="@drawable/varsity_jacket_smaller"
+                        android:maxWidth="105dp"
+                        android:text="Varsity Jacket"
+                        android:textAllCaps="false"
+
+                        android:textColor="@color/blue" />
+
+                    <Button
+                        android:id="@+id/stationaryCategory"
+                        style="?android:attr/buttonBarButtonStyle"
+                        android:layout_width="110dp"
+                        android:layout_height="136dp"
+                        android:drawableTop="@drawable/stationary_smaller"
+                        android:maxWidth="105dp"
+                        android:text="Stationary"
+                        android:textAllCaps="false"
+                        android:textColor="@color/blue" />
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:orientation="vertical">
+
+                    <Button
+                        android:id="@+id/schoolUniformCategory"
+                        style="?android:attr/buttonBarButtonStyle"
+                        android:layout_width="110dp"
+                        android:layout_height="136dp"
+                        android:drawableTop="@drawable/school_uniform_smaller"
+                        android:maxWidth="105dp"
+                        android:text="School Uniforms"
+                        android:textAllCaps="false"
+                        android:textColor="@color/blue" />
+
+                    <Button
+                        android:id="@+id/studentIdCategory"
+                        style="?android:attr/buttonBarButtonStyle"
+                        android:layout_width="110dp"
+                        android:layout_height="136dp"
+                        android:drawableTop="@drawable/student_id_smaller"
+                        android:maxWidth="105dp"
+                        android:text="Student ID"
+                        android:textAllCaps="false"
+                        android:textColor="@color/blue" />
+                </LinearLayout>
+
+                <Button
+                    android:id="@+id/yearbookCategory"
+                    style="?android:attr/buttonBarButtonStyle"
+                    android:layout_width="110dp"
+                    android:layout_height="136dp"
+                    android:drawableTop="@drawable/yearbook_smaller"
+                    android:text="Yearbook"
+                    android:textAllCaps="false"
+                    android:textColor="@color/blue" />
+
+            </LinearLayout>
+        </HorizontalScrollView>
+
+        <ImageView
+            android:id="@+id/imageView2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@drawable/accessories"
+            android:contentDescription="@string/def"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/horizontalScrollView" />
+
+        <ImageView
+            android:id="@+id/imageView3"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@drawable/accessories"
+            android:contentDescription="@string/def"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/imageView2" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+</ScrollView>
