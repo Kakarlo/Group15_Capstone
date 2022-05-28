@@ -11,10 +11,10 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.ImageView;
-import android.widget.Toast;
 
 import com.example.group15_capstone.R;
 import com.example.group15_capstone.View.Product;
+import com.example.group15_capstone.View.ShoppingCart;
 
 public class HomeFragment extends Fragment implements View.OnClickListener{
 
@@ -46,7 +46,10 @@ public class HomeFragment extends Fragment implements View.OnClickListener{
 
         //ImageView
         notifBtn = view.findViewById(R.id.notificationButton);
-        notifBtn.setOnClickListener(view1 -> Toast.makeText(getContext(), "Shopping Cart", Toast.LENGTH_SHORT).show());
+        notifBtn.setOnClickListener(view1 -> {
+            Intent intent = new Intent(getActivity(), ShoppingCart.class);
+            startActivity(intent);
+        });
 
         return view;
     }

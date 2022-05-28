@@ -2,6 +2,7 @@ package com.example.group15_capstone.View;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.widget.ImageView;
 
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.recyclerview.widget.LinearLayoutManager;
@@ -19,6 +20,7 @@ public class Product extends AppCompatActivity {
     private RecyclerView rv;
     private Data data;
     private ProductRvAdapter.RecyclerViewClickListener listener;
+    private ImageView notifBtn;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -38,11 +40,18 @@ public class Product extends AppCompatActivity {
         ProductRvAdapter rvAdapter = new ProductRvAdapter(this, product(text), listener);
         rv.setLayoutManager(new LinearLayoutManager(this));
         rv.setAdapter(rvAdapter);
+
+        //ImageView
+        notifBtn = findViewById(R.id.notificationButton);
+        notifBtn.setOnClickListener(view -> {
+            Intent intent1 = new Intent( Product.this, ShoppingCart.class);
+            startActivity(intent1);
+        });
     }
 
     private void setOnClickListener(List<ItemModel> list) {
         listener = (view, position) -> {
-            Intent intent = new Intent(this, MyPurchase.class);
+            Intent intent = new Intent(this, ProductDesc.class);
             intent.putExtra("product", list.get(position).getText());
             startActivity(intent);
         };

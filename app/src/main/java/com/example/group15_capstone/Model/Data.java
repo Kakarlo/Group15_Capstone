@@ -14,6 +14,19 @@ public class Data {
         return item;
     }
 
+    public List<ItemModel> shoppingCart(){
+        item = new ArrayList<>();
+        item.add(new ItemModel("Winter Uniform", "Php 350", R.drawable.to_recieve_icon));
+        item.add(new ItemModel("Summer Uniform", "Php 300", R.drawable.cancel_icon));
+        item.add(new ItemModel("Swimming Uniform", "Php 300", R.drawable.to_pay_icon));
+        item.add(new ItemModel("PE Uniform", "Php 200", R.drawable.to_rate_icon));
+        item.add(new ItemModel("Diving Uniform", "Php 350", R.drawable.to_recieve_icon));
+        item.add(new ItemModel("Basketball Uniform", "Php 300", R.drawable.cancel_icon));
+        item.add(new ItemModel("Gloves", "Php 300", R.drawable.to_pay_icon));
+        item.add(new ItemModel("Hat", "Php 200", R.drawable.to_rate_icon));
+        return item;
+    }
+
     public List<ItemModel> schoolUniform(){
         item = new ArrayList<>();
         item.add(new ItemModel("Winter Uniform", "Php 350", R.drawable.to_recieve_icon));

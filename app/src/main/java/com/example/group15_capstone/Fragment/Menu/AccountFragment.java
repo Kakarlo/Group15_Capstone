@@ -1,7 +1,9 @@
 package com.example.group15_capstone.Fragment.Menu;
 
 import android.annotation.SuppressLint;
+import android.content.Context;
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.os.Bundle;
 
 import androidx.fragment.app.Fragment;
@@ -15,16 +17,20 @@ import android.widget.TextView;
 
 import com.example.group15_capstone.R;
 import com.example.group15_capstone.View.Account;
+import com.example.group15_capstone.View.LogIn;
 import com.example.group15_capstone.View.MainMenu;
 import com.example.group15_capstone.View.MyPurchase;
 
 public class AccountFragment extends Fragment implements View.OnClickListener{
 
     Button buyingBtn, postingBtn, toPayBtn, toShipBtn, toReceiveBtn, toRateBtn, myPurchaseBtn, digitalPurchaseBtn,
-    myLikesBtn, recentlyViewedBtn, myRatingBtn, settingsBtn, messageMcsBtn;
+    myLikesBtn, recentlyViewedBtn, myRatingBtn, settingsBtn, messageMcsBtn, logoutButton;
     TextView personName, personID;
     ImageView personImg;
+    SharedPreferences sp;
+    SharedPreferences.Editor editor;
 
+    @SuppressLint("SetTextI18n")
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
         View view = inflater.inflate(R.layout.fragment_account, container, false);
@@ -43,6 +49,7 @@ public class AccountFragment extends Fragment implements View.OnClickListener{
         myRatingBtn = view.findViewById(R.id.myRatingBtn);
         settingsBtn = view.findViewById(R.id.settingsBtn);
         messageMcsBtn = view.findViewById(R.id.messageMcsBtn);
+        logoutButton = view.findViewById(R.id.logoutButton);
 
         //Button listener
         buyingBtn.setOnClickListener(this);
@@ -58,15 +65,21 @@ public class AccountFragment extends Fragment implements View.OnClickListener{
         myRatingBtn.setOnClickListener(this);
         settingsBtn.setOnClickListener(this);
         messageMcsBtn.setOnClickListener(this);
+        logoutButton.setOnClickListener(this);
+
+        //SharedPreferences
+        sp = requireActivity().getSharedPreferences("StoredData", Context.MODE_PRIVATE);
+        editor = sp.edit();
 
         //TextView
         personName = view.findViewById(R.id.personName);
         personID = view.findViewById(R.id.personID);
         personImg = view.findViewById(R.id.personImg);
 
-        //ImageView
+        personName.setText(sp.getString("Username", ""));
+        personID.setText("Student ID: " + sp.getInt("StudentId", 0));
+
         return view;
-        //TODO: TOM NA LEZ GOooooooooooooo
     }
 
     @SuppressLint("NonConstantResourceId")
@@ -133,6 +146,14 @@ public class AccountFragment extends Fragment implements View.OnClickListener{
             case R.id.messageMcsBtn:
                 Intent m = new Intent(getActivity(), MainMenu.class);
                 startActivity(m);
+                break;
+            case R.id.logoutButton:
+                Intent n = new Intent(getActivity(), LogIn.class);
+                n.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK | Intent.FLAG_ACTIVITY_CLEAR_TASK);
+                editor.putString("Username", "");
+                editor.putInt("StudentId", 0);
+                editor.apply();
+                startActivity(n);
                 break;
 
         }

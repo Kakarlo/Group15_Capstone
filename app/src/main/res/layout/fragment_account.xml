@@ -243,7 +243,8 @@
                 android:textColor="@color/blue"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/myPurchaseButton" />
+                app:layout_constraintTop_toBottomOf="@+id/myPurchaseButton"
+                tools:ignore="TouchTargetSizeCheck" />
 
             <android.widget.Button
                 android:id="@+id/recentlyViewedBtn"
@@ -259,7 +260,8 @@
                 android:textColor="@color/blue"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/myPurchaseButton" />
+                app:layout_constraintTop_toBottomOf="@+id/myPurchaseButton"
+                tools:ignore="TouchTargetSizeCheck" />
 
             <android.widget.Button
                 android:id="@+id/myRatingBtn"
@@ -275,7 +277,8 @@
                 android:textColor="@color/blue"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/myPurchaseButton" />
+                app:layout_constraintTop_toBottomOf="@+id/myPurchaseButton"
+                tools:ignore="TouchTargetSizeCheck" />
 
         </LinearLayout>
 
@@ -303,7 +306,8 @@
                 android:textColor="@color/red"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/myPurchaseButton" />
+                app:layout_constraintTop_toBottomOf="@+id/myPurchaseButton"
+                tools:ignore="TouchTargetSizeCheck,TextContrastCheck" />
 
             <android.widget.Button
                 android:id="@+id/messageMcsBtn"
@@ -319,7 +323,25 @@
                 android:textColor="@color/red"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/myPurchaseButton" />
+                app:layout_constraintTop_toBottomOf="@+id/myPurchaseButton"
+                tools:ignore="TouchTargetSizeCheck,TextContrastCheck" />
+
+            <android.widget.Button
+                android:id="@+id/logoutButton"
+                android:layout_width="match_parent"
+                android:layout_height="40dp"
+                android:layout_marginTop="2dp"
+                android:layout_marginBottom="2dp"
+                android:background="@color/grey"
+                android:drawableStart="@drawable/off_smaller"
+                android:gravity="center_vertical"
+                android:text="Log-out"
+                android:textAllCaps="false"
+                android:textColor="@color/red"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/myPurchaseButton"
+                tools:ignore="TouchTargetSizeCheck,TextContrastCheck" />
 
         </LinearLayout>
 

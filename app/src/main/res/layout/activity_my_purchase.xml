@@ -32,6 +32,8 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:gravity="center"
+            android:fontFamily="@font/eczar_variablefont_wght"
+            android:letterSpacing="0.06"
             android:text="My Purchase"
             android:textColor="@color/white"
             android:textSize="35sp"

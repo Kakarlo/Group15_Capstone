@@ -3,7 +3,9 @@ package com.example.group15_capstone.View;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.annotation.SuppressLint;
+import android.content.Context;
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.os.Handler;
 import android.view.animation.Animation;
@@ -17,6 +19,7 @@ public class SplashScreen extends AppCompatActivity {
 
     ImageView mcsCart, mcsBags;
     Animation leftright, rightleft;
+    SharedPreferences sp;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -26,6 +29,9 @@ public class SplashScreen extends AppCompatActivity {
         //ImageView
         mcsCart = findViewById(R.id.mcsCart);
         mcsBags = findViewById(R.id.mcsBags);
+
+        //SharedPreferences
+        sp = getSharedPreferences("StoredData", Context.MODE_PRIVATE);
 
         //Animation
         leftright = AnimationUtils.loadAnimation(this, R.anim.left_to_right);
@@ -38,9 +44,15 @@ public class SplashScreen extends AppCompatActivity {
         mcsBags.startAnimation(rightleft);
 
         new Handler().postDelayed(() -> {
-            Intent intent = new Intent(SplashScreen.this, MainMenu.class);
-            startActivity(intent);
-            finish();
+            if(sp.getString("Username", "") != null && sp.getInt("StudentId", 0) != 0){
+                Intent intent = new Intent(SplashScreen.this, MainMenu.class);
+                startActivity(intent);
+                finish();
+            } else {
+                Intent login = new Intent(SplashScreen.this, LogIn.class);
+                startActivity(login);
+                finish();
+            }
         },3000);
 
     }

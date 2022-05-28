@@ -1,5 +1,6 @@
 package com.example.group15_capstone.Fragment.Menu;
 
+import android.content.Intent;
 import android.os.Bundle;
 
 import androidx.fragment.app.Fragment;
@@ -10,11 +11,11 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ImageView;
-import android.widget.Toast;
 
 import com.example.group15_capstone.Adapter.NotificationRvAdapter;
 import com.example.group15_capstone.Model.Data;
 import com.example.group15_capstone.R;
+import com.example.group15_capstone.View.ShoppingCart;
 
 public class NotificationFragment extends Fragment {
 
@@ -33,7 +34,10 @@ public class NotificationFragment extends Fragment {
         rv.setAdapter(rvAdapter);
         //ImageView
         notifBtn = view.findViewById(R.id.notificationButton);
-        notifBtn.setOnClickListener(view1 -> Toast.makeText(getContext(), "Shopping Cart", Toast.LENGTH_SHORT).show());
+        notifBtn.setOnClickListener(view1 -> {
+            Intent intent = new Intent(getActivity(), ShoppingCart.class);
+            startActivity(intent);
+        });
         return view;
     }
 

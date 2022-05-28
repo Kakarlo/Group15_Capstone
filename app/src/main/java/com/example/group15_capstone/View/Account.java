@@ -54,7 +54,7 @@ public class Account extends AppCompatActivity {
 
     private void setOnClickListener(List<ItemModel> list) {
         listener = (view, position) -> {
-            Intent intent = new Intent(this, MyPurchase.class);
+            Intent intent = new Intent(this, ProductDesc.class);
             intent.putExtra("product", list.get(position).getText());
             startActivity(intent);
         };

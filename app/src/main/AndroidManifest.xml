@@ -10,14 +10,31 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.Group15_Capstone">
         <activity
-            android:name=".View.Account"
+            android:name=".View.LogIn"
             android:exported="false" />
+        <activity
+            android:name=".View.Checkout"
+            android:exported="false" />
+        <activity
+            android:name=".View.ShoppingCart"
+            android:exported="false"
+            android:launchMode="singleTask" />
+        <activity
+            android:name=".View.Account"
+            android:exported="false"
+            android:launchMode="singleTask" />
         <activity
             android:name=".View.Product"
-            android:exported="false" />
+            android:exported="false"
+            android:launchMode="singleTask" />
+        <activity
+            android:name=".View.ProductDesc"
+            android:exported="false"
+            android:launchMode="singleTask" />
         <activity
             android:name=".View.MyPurchase"
-            android:exported="false" />
+            android:exported="false"
+            android:launchMode="singleTask" />
         <activity
             android:name=".View.SplashScreen"
             android:exported="true">
